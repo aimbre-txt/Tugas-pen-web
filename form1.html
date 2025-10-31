@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulir Registrasi Kelas</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(153, 130, 130, 0.1);
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .class-registration-form h1 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .class-registration-form > p:first-of-type {
+      color: #666;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    legend {
+      font-size: 15px;
+      color: #333;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .input-group input::placeholder {
+      color: #aaa;
+    }
+
+    .select-group select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      appearance: none;
+      background: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13.7-6.7H19.4c-6.1%200-12.1%203.4-14.8%209s-.9%2012.8%203.2%2017.7l124%20140c4%204.6%2011%207%2018%207s14-2.4%2018-7l124-140c4-5%205-11%203.2-17.7z%22%2F%3E%3C%2Fsvg%3E") no-repeat right 10px center;
+      background-size: 10px;
+    }
+
+    .helper-text {
+      font-size: 12px;
+      color: #888;
+      margin-top: 5px;
+      margin-bottom: 15px;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .checkbox-group .column {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .checkbox-group label {
+      margin-bottom: 8px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .checkbox-group input[type="checkbox"],
+    .agreement-group input[type="checkbox"] {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-right: 8px;
+      cursor: pointer;
+      position: relative;
+      outline: none;
+    }
+
+    .checkbox-group input[type="checkbox"]:checked::after,
+    .agreement-group input[type="checkbox"]:checked::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 5px;
+      width: 4px;
+      height: 8px;
+      border: solid #000;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    .agreement-group label {
+      font-size: 13px;
+      color: #666;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+
+    .register-button {
+      width: 100%;
+      padding: 12px;
+      background-color: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .register-button:hover {
+      background-color: #333;
+    }
+
+    /* Responsif */
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 15px;
+      }
+
+      .input-group {
+        flex-direction: row;
+        gap: 8px;
+      }
+
+      .input-group input {
+        font-size: 13px;
+        padding: 8px;
+      }
+
+      .class-registration-form h1 {
+        font-size: 18px;
+      }
+
+      .register-button {
+        font-size: 15px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <form class="class-registration-form">
+      <h1>FORMULIR REGISTRASI KELAS</h1>
+      <p>Silahkan isi data di bawah untuk mengisi formulir</p>
+
+      <legend>Identitas</legend>
+      <div class="input-group">
+        <input type="text" id="first-name" name="first-name" placeholder="Nama Depan" required>
+        <input type="text" id="last-name" name="last-name" placeholder="Nama Belakang" required>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email-address" name="email-address" placeholder="Alamat Email" required>
+        <input type="tel" id="phone-number" name="phone-number" placeholder="No HP" required>
+      </div>
+
+      <h2>Level Kelas</h2>
+      <div class="select-group">
+        <select id="class-level" name="class-level" required>
+          <option value="" disabled selected hidden>Pilih Level Kelas</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+      <p class="helper-text">Pilih level kelas sesuai kemampuan anda</p>
+
+      <h2>Jadwal Kelas</h2>
+      <p>Pilih hari sesuai jadwal</p>
+      <div class="checkbox-group">
+        <div class="column">
+          <label><input type="checkbox" name="class-days" value="senin" /> Senin</label>
+          <label><input type="checkbox" name="class-days" value="selasa" /> Selasa</label>
+          <label><input type="checkbox" name="class-days" value="rabu" /> Rabu</label>
+        </div>
+        <div class="column">
+          <label><input type="checkbox" name="class-days" value="kamis" /> Kamis</label>
+          <label><input type="checkbox" name="class-days" value="jumat" /> Jumat</label>
+        </div>
+      </div>
+
+      <div class="agreement-group">
+        <label>
+          <input type="checkbox" id="terms-agreement" name="terms-agreement" required />
+          Saya setuju dengan persyaratan dan ketentuan yang berlaku
+        </label>
+      </div>
+
+      <button type="submit" class="register-button">Daftar Sekarang!</button>
+    </form>
+  </div>
+</body>
+
+</html>
